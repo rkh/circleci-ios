@@ -4,3 +4,11 @@
 source 'https://rubygems.org'
 
 gem 'rake'
+gem 'rubymotion_generators'
+gem 'bubble-wrap'
+# gem 'sugarcube'
+# gem 'motion-testflight'
+gem 'dotenv'
+gem 'ib'
+gem 'cocoapods', '0.16.4'
+gem 'motion-cocoapods'

@@ -19,8 +19,8 @@ class Circle
   def me(&block)
     url = "#{BASE_URI}/me?circle-token=#{@token}"
     BW::HTTP.get(url, { :headers => default_headers }) do |response|
-      result_data = BW::JSON.parse(response.body.to_str)
-      result_data = [] if result_data.empty?
+      result_data = BW::JSON.parse(response.body.to_str) rescue nil
+      result_data = [] if result_data.nil? or result_data.empty?
       block.call Me.new(result_data)
     end
   end
@@ -28,9 +28,18 @@ class Circle
   def recent_builds(&block)
     url = "#{BASE_URI}/recent-builds?circle-token=#{@token}"
     BW::HTTP.get(url, { :headers => default_headers }) do |response|
-      result_data = BW::JSON.parse(response.body.to_str)
-      result_data = [] if result_data.empty?
+      result_data = BW::JSON.parse(response.body.to_str) rescue nil
+      result_data = [] if result_data.nil? or result_data.empty?
       block.call result_data.map { |attrs| Build.new attrs }
+    end
+  end
+
+  def all_projects(&block)
+    url = "#{BASE_URI}/projects?circle-token=#{@token}"
+    BW::HTTP.get(url, { :headers => default_headers }) do |response|
+      result_data = BW::JSON.parse(response.body.to_str) rescue nil
+      result_data = [] if result_data.nil? or result_data.empty?
+      block.call result_data.map { |attrs| Project.new attrs }
     end
   end
 

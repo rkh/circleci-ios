@@ -9,31 +9,136 @@
             <objects>
                 <viewController id="vHk-8P-B2L" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtN-uX-sue">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dud-MD-Lpl">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VM-rx-ei3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Hpj-B4-18a"/>
+                                    <constraint firstAttribute="width" constant="198" id="UYK-EV-UrA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <size key="shadowOffset" width="-1" height="0.0"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-uL-Bwa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Orr-Vr-2ag"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <size key="shadowOffset" width="-1" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wgH-uL-Bwa" firstAttribute="top" secondItem="gtN-uX-sue" secondAttribute="top" constant="125" id="7sd-lX-GZL"/>
+                            <constraint firstItem="Dud-MD-Lpl" firstAttribute="top" secondItem="gtN-uX-sue" secondAttribute="top" constant="38" id="86J-B9-Mpz"/>
+                            <constraint firstItem="Dud-MD-Lpl" firstAttribute="leading" secondItem="gtN-uX-sue" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fj9-y5-axb"/>
+                            <constraint firstItem="3VM-rx-ei3" firstAttribute="leading" secondItem="gtN-uX-sue" secondAttribute="leading" constant="71" id="L4V-0J-yGE"/>
+                            <constraint firstItem="wgH-uL-Bwa" firstAttribute="trailing" secondItem="3VM-rx-ei3" secondAttribute="trailing" type="default" id="d8O-zv-f4C"/>
+                            <constraint firstItem="wgH-uL-Bwa" firstAttribute="leading" secondItem="3VM-rx-ei3" secondAttribute="leading" type="default" id="lDp-0s-LVt"/>
+                            <constraint firstItem="3VM-rx-ei3" firstAttribute="top" secondItem="gtN-uX-sue" secondAttribute="top" constant="42" id="uIe-Xa-WOD"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" id="bZD-0q-IxX"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="profile.png" id="bZD-0q-IxX"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9O-YZ-FAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="1109"/>
+            <point key="canvasLocation" x="203" y="862"/>
         </scene>
-        <!--View Controller - Projects-->
-        <scene sceneID="sE3-4A-bY3">
+        <!--Projects Table View Controller - Projects-->
+        <scene sceneID="uBa-bq-fiZ">
             <objects>
-                <viewController id="P5L-fD-pyO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yk4-WZ-ziW">
+                <tableViewController id="33s-oo-J7r" customClass="ProjectsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="9wy-5p-5M1">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Projects" id="DP4-Yj-18m"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tp7-go-rpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectCell" rowHeight="60" id="Ga6-iX-8I8" customClass="ProjectViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Repo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="BZC-AK-VXv">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="1k2-j0-2Lz"/>
+                                                <constraint firstAttribute="width" constant="200" id="I5P-ho-RRY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-3n-NKE">
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-2s-vvC">
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsp-OP-z00">
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Branch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Azp-uM-kMS">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="142" id="QhA-xf-k0F"/>
+                                                <constraint firstAttribute="height" constant="21" id="shS-b7-CsZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bsp-OP-z00" secondAttribute="trailing" constant="239" id="B2Q-um-ex3"/>
+                                    <constraint firstItem="bsp-OP-z00" firstAttribute="top" secondItem="tZ8-2s-vvC" secondAttribute="top" type="default" id="CNi-kl-gpy"/>
+                                    <constraint firstItem="tZ8-2s-vvC" firstAttribute="leading" secondItem="mn1-3n-NKE" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Erq-7e-ucK"/>
+                                    <constraint firstItem="tZ8-2s-vvC" firstAttribute="leading" secondItem="Ga6-iX-8I8" secondAttribute="leading" constant="43" id="Gjc-LB-fYk"/>
+                                    <constraint firstItem="BZC-AK-VXv" firstAttribute="top" secondItem="Ga6-iX-8I8" secondAttribute="top" constant="7" id="I6Q-I9-abW"/>
+                                    <constraint firstItem="bsp-OP-z00" firstAttribute="leading" secondItem="Ga6-iX-8I8" secondAttribute="leading" constant="66" id="ILX-T0-bq5"/>
+                                    <constraint firstItem="Azp-uM-kMS" firstAttribute="centerY" secondItem="bsp-OP-z00" secondAttribute="centerY" type="default" id="SM5-AK-B4C"/>
+                                    <constraint firstItem="mn1-3n-NKE" firstAttribute="leading" secondItem="Ga6-iX-8I8" secondAttribute="leading" constant="20" type="default" id="ai0-7L-CUB"/>
+                                    <constraint firstItem="bsp-OP-z00" firstAttribute="leading" secondItem="tZ8-2s-vvC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bvU-jR-s1p"/>
+                                    <constraint firstItem="bsp-OP-z00" firstAttribute="bottom" secondItem="tZ8-2s-vvC" secondAttribute="bottom" type="default" id="cTm-8w-NO2"/>
+                                    <constraint firstItem="tZ8-2s-vvC" firstAttribute="bottom" secondItem="mn1-3n-NKE" secondAttribute="bottom" type="default" id="gQQ-QE-igB"/>
+                                    <constraint firstItem="tZ8-2s-vvC" firstAttribute="top" secondItem="mn1-3n-NKE" secondAttribute="top" type="default" id="h9n-Fi-VHq"/>
+                                    <constraint firstItem="mn1-3n-NKE" firstAttribute="top" secondItem="Ga6-iX-8I8" secondAttribute="top" constant="39" id="hjy-vO-aXL"/>
+                                    <constraint firstItem="BZC-AK-VXv" firstAttribute="leading" secondItem="Ga6-iX-8I8" secondAttribute="leading" constant="20" type="default" id="oeU-bV-tDx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Azp-uM-kMS" secondAttribute="trailing" constant="20" type="default" id="ptH-7T-NvJ"/>
+                                    <constraint firstItem="Azp-uM-kMS" firstAttribute="top" secondItem="BZC-AK-VXv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="z6r-5e-ukp"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="branch_label" destination="Azp-uM-kMS" id="Ytj-fu-dh1"/>
+                                    <outlet property="build1_view" destination="mn1-3n-NKE" id="sub-ef-pnU"/>
+                                    <outlet property="build2_view" destination="tZ8-2s-vvC" id="QVd-jb-gy2"/>
+                                    <outlet property="build3_view" destination="bsp-OP-z00" id="0RK-bU-7uf"/>
+                                    <outlet property="name_label" destination="BZC-AK-VXv" id="x0i-Kv-PDz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="33s-oo-J7r" id="Uko-zu-jQC"/>
+                            <outlet property="delegate" destination="33s-oo-J7r" id="a1N-gx-gQL"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Projects" image="list.png" id="NU8-zw-WOH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQU-6v-AlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="635" y="484"/>
+            <point key="canvasLocation" x="641" y="554"/>
         </scene>
         <!--Recent Table View Controller - Recent-->
         <scene sceneID="lfp-LC-7IR">
@@ -105,7 +210,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Recent" id="sdX-WJ-34Z"/>
+                    <tabBarItem key="tabBarItem" title="Recent" image="recent.png" id="sdX-WJ-34Z"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yk-41-b4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,8 +231,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="t29-NW-Zsf" kind="relationship" relationship="viewControllers" id="Kob-9R-acs"/>
-                        <segue destination="P5L-fD-pyO" kind="relationship" relationship="viewControllers" id="PEa-Se-nq7"/>
-                        <segue destination="vHk-8P-B2L" kind="relationship" relationship="viewControllers" id="od7-wE-bKp"/>
+                        <segue destination="33s-oo-J7r" kind="relationship" relationship="viewControllers" id="p2c-y7-p0D"/>
+                        <segue destination="vHk-8P-B2L" kind="relationship" relationship="viewControllers" id="1Jm-2g-3dg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rR-xz-Sqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,6 +240,11 @@
             <point key="canvasLocation" x="135" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.png" width="16" height="16"/>
+        <image name="profile.png" width="30" height="30"/>
+        <image name="recent.png" width="16" height="16"/>
+    </resources>
     <classes>
         <class className="BuildViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BuildViewCell.h"/>
@@ -145,13 +255,37 @@
                 <relationship kind="outlet" name="subject_label"/>
             </relationships>
         </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        <class className="ProjectViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectViewCell.h"/>
+            <relationships>
+                <relationship kind="action" name="setup_build_views:"/>
+                <relationship kind="outlet" name="branch_label"/>
+                <relationship kind="outlet" name="build1_view"/>
+                <relationship kind="outlet" name="build2_view"/>
+                <relationship kind="outlet" name="build3_view"/>
+                <relationship kind="outlet" name="name_label"/>
+            </relationships>
+        </class>
+        <class className="ProjectsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="load_projects"/>
+                <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="pullToRefreshViewDidStartLoading:"/>
+                <relationship kind="action" name="refresh"/>
+                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewDidUnload"/>
+            </relationships>
         </class>
         <class className="RecentTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="check_for_rewards:"/>
+                <relationship kind="action" name="load_recent_builds"/>
                 <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="pullToRefreshViewDidStartLoading:"/>
+                <relationship kind="action" name="refresh"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
                 <relationship kind="action" name="viewDidAppear:"/>
                 <relationship kind="action" name="viewDidLoad"/>

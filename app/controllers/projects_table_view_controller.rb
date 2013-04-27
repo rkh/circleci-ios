@@ -1,6 +1,6 @@
-class RecentTableViewController < UITableViewController
+class ProjectsTableViewController < UITableViewController
 
-  attr_accessor :builds, :pullToRefreshView
+  attr_accessor :projects, :pullToRefreshView
 
   def viewDidLoad
     super
@@ -28,30 +28,24 @@ class RecentTableViewController < UITableViewController
     # e.g. self.myOutlet = nil
   end
 
-  def load_recent_builds
+  def load_projects
     defaults = NSUserDefaults.standardUserDefaults
     user = defaults['user']
     circle = Circle.shared_instance
     circle.token ||= user['token']
-    circle.recent_builds do |builds|
-      @builds = builds.dup
-      self.performSelectorInBackground('check_for_rewards:', withObject:@builds)
+    circle.all_projects do |projects|
+      @projects = projects.dup.map do |proj|
+        proj.all_branches.map do |b|
+          branch_info = proj.branches[b]
+          next if branch_info['recent_builds'].to_a.empty?
+          branch_info.merge!('name' => b)
+          attrs = Project::PROJ_ATTRS.inject({}) { |hash, attr| hash[attr] = proj.send(attr); hash }
+          Project.new attrs.merge('branch_info' => branch_info)
+        end
+      end.flatten.compact
+      # self.performSelectorInBackground('check_for_rewards:', withObject:@builds)
       self.pullToRefreshView.finishLoading
       view.reloadData
-    end
-  end
-
-  def check_for_rewards(builds)
-    Build.check_for_rewards(builds)
-  end
-
-  def viewDidAppear(animated)
-    defaults = NSUserDefaults.standardUserDefaults
-    user = defaults['user']
-    unless user and user['token']
-      loginView = LoginViewController.new.initWithNibName 'LoginView', bundle: nil
-      loginView.delegate = self
-      self.tabBarController.presentViewController(loginView, animated:false, completion:nil)
     end
   end
 
@@ -68,22 +62,20 @@ class RecentTableViewController < UITableViewController
 
   def tableView(tableView, numberOfRowsInSection:section)
     # Return the number of rows in the section.
-    @builds.to_a.size
+    @projects.to_a.size
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
-    cellIdentifier = 'BuildCell'
+    cellIdentifier = 'ProjectCell'
     cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) || begin
-      cell = BuildViewCell.alloc.initWithStyle UITableViewCellStyleDefault, reuseIdentifier: cellIdentifier
+      cell = ProjectViewCell.alloc.initWithStyle UITableViewCellStyleDefault, reuseIdentifier: cellIdentifier
       cell
     end
 
-    build = @builds[indexPath.row]
-    # [self performSelectorInBackground:@selector(getResultSetFromDB:) withObject:docids];
-    cell.build_label.text = "##{build.build_num} [#{build.branch}]"
-    cell.status_view.backgroundColor = build.status_color
-    cell.subject_label.text = build.subject.to_s
-    cell.committer_label.text = build.username
+    project = @projects[indexPath.row]
+    cell.name_label.text = project.repo_name
+    cell.branch_label.text = project.branch_name
+    cell.setup_build_views(project)
     cell.selectionStyle = UITableViewCellSelectionStyleNone
     cell
   end
@@ -132,13 +124,13 @@ class RecentTableViewController < UITableViewController
     # self.navigationController.pushViewController(detailViewController, animated:true)
   end
 
-  def refresh
-   self.pullToRefreshView.startLoading
-   load_recent_builds
-  end
+   def refresh
+    self.pullToRefreshView.startLoading
+    load_projects
+   end
 
-  def pullToRefreshViewDidStartLoading(view)
-   self.refresh
- end
+   def pullToRefreshViewDidStartLoading(view)
+    self.refresh
+  end
 
 end

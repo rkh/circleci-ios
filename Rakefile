@@ -16,8 +16,9 @@ Motion::Project::App.setup do |app|
   app.vendor_project('vendor/KiipSDK.framework', :static,
         :products => ['KiipSDK'],
         :headers_dir => 'Headers')
-  app.deployment_target = '5.0'
+  app.deployment_target      = '5.0'
   app.interface_orientations = [:portrait]
+  app.prerendered_icon       = true
   app.pods do
     pod 'SSPullToRefresh'
   end

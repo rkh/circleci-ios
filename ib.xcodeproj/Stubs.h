@@ -159,6 +159,23 @@
 @end
 
 
+@interface ProjectsTableViewController: UITableViewController
+
+
+
+
+
+-(IBAction) viewDidLoad;
+-(IBAction) viewDidUnload;
+-(IBAction) load_projects;
+-(IBAction) shouldAutorotateToInterfaceOrientation:(id) interfaceOrientation;
+-(IBAction) numberOfSectionsInTableView:(id) tableView;
+-(IBAction) refresh;
+-(IBAction) pullToRefreshViewDidStartLoading:(id) view;
+
+@end
+
+
 @interface RecentTableViewController: UITableViewController
 
 
@@ -167,9 +184,13 @@
 
 -(IBAction) viewDidLoad;
 -(IBAction) viewDidUnload;
+-(IBAction) load_recent_builds;
+-(IBAction) check_for_rewards:(id) builds;
 -(IBAction) viewDidAppear:(id) animated;
 -(IBAction) shouldAutorotateToInterfaceOrientation:(id) interfaceOrientation;
 -(IBAction) numberOfSectionsInTableView:(id) tableView;
+-(IBAction) refresh;
+-(IBAction) pullToRefreshViewDidStartLoading:(id) view;
 
 @end
 
@@ -182,6 +203,8 @@
 
 -(IBAction) initialize:(id) attrs;
 -(IBAction) username;
+-(IBAction) status_color;
+-(IBAction) check_first_passing:(id) info;
 
 @end
 
@@ -210,6 +233,20 @@
 @end
 
 
+@interface Project
+
+
+
+
+
+-(IBAction) initialize:(id) attrs;
+-(IBAction) all_branches;
+-(IBAction) branch_name;
+-(IBAction) repo_name;
+
+@end
+
+
 @interface BuildViewCell: UITableViewCell
 
 @property IBOutlet id build_label;
@@ -220,6 +257,21 @@
 
 
 
+
+@end
+
+
+@interface ProjectViewCell: UITableViewCell
+
+@property IBOutlet id name_label;
+@property IBOutlet id branch_label;
+@property IBOutlet id build1_view;
+@property IBOutlet id build2_view;
+@property IBOutlet id build3_view;
+
+
+
+-(IBAction) setup_build_views:(id) project;
 
 @end
 

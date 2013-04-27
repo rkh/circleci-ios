@@ -9,11 +9,7 @@ class Build
     end
   end
 
-  def username
-    user.nil? ? '' : user['name']
-  end
-
-  def status_color
+  def self.color_from_status(status)
     case status.to_s.downcase
     when 'error', 'failed', 'timedout' then '#903d3d'.to_color
     when 'started', 'running', 'queued' then '#84c0d7'.to_color
@@ -22,6 +18,14 @@ class Build
     else
       '#d2ab59'.to_color
     end
+  end
+
+  def username
+    user.nil? ? '' : user['name']
+  end
+
+  def status_color
+    Build.color_from_status status.to_s.downcase
   end
 
   def self.check_for_rewards(builds)

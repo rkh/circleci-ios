@@ -58,6 +58,11 @@
 @end
 
 
+@implementation ProjectsTableViewController
+
+@end
+
+
 @implementation RecentTableViewController
 
 @end
@@ -78,7 +83,17 @@
 @end
 
 
+@implementation Project
+
+@end
+
+
 @implementation BuildViewCell
+
+@end
+
+
+@implementation ProjectViewCell
 
 @end
 

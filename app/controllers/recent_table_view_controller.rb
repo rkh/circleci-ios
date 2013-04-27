@@ -32,9 +32,14 @@ class RecentTableViewController < UITableViewController
     circle.token ||= user['token']
     circle.recent_builds do |builds|
       @builds = builds.dup
+      self.performSelectorInBackground('check_for_rewards:', withObject:@builds)
       self.pullToRefreshView.finishLoading
       view.reloadData
     end
+  end
+
+  def check_for_rewards(builds)
+    Build.check_for_rewards(builds)
   end
 
   def viewDidAppear(animated)
@@ -71,6 +76,7 @@ class RecentTableViewController < UITableViewController
     end
 
     build = @builds[indexPath.row]
+    # [self performSelectorInBackground:@selector(getResultSetFromDB:) withObject:docids];
     cell.build_label.text = "##{build.build_num} [#{build.branch}]"
     cell.status_view.backgroundColor = build.status_color
     cell.subject_label.text = build.subject.to_s

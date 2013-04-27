@@ -6,6 +6,9 @@ class AppDelegate
     navController = storyboard.instantiateInitialViewController
     @window.rootViewController = navController
     @window.makeKeyAndVisible
+    kiip = Kiip.alloc.initWithAppKey(ENV['KIIP_APP_KEY'], andSecret: ENV['KIIP_APP_SECRET'])
+    kiip.delegate = self
+    Kiip.setSharedInstance(kiip)
     true
   end
 

@@ -1,0 +1,329 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant name='KPErrorDomain' type='@' const='true' declared_type='NSString*'/>
+<constant name='KPVersion' type='@' const='true' declared_type='NSString*'/>
+<constant name='kKPCapabilities_Real' type='@' const='true' declared_type='NSString*'/>
+<constant name='kKPCapabilities_Swarm' type='@' const='true' declared_type='NSString*'/>
+<constant name='kKPCapabilities_Virtual' type='@' const='true' declared_type='NSString*'/>
+<enum name='kKPGravity_Bottom' value='1'/>
+<enum name='kKPGravity_Top' value='0'/>
+<class name='KPModal'>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='message'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' index='0' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMessage:'>
+<arg name='message' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTitle:'>
+<arg name='title' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='title'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='KPNotification'>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='gravity'>
+<retval type='i' declared_type='KPGravity'/>
+</method>
+<method selector='icon'>
+<retval type='^i' declared_type='int*'/>
+</method>
+<method selector='message'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' index='0' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGravity:'>
+<arg name='gravity' index='0' type='i' declared_type='KPGravity'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setIcon:'>
+<arg name='icon' index='0' type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMessage:'>
+<arg name='message' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTitle:'>
+<arg name='title' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='title'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='KPNotificationView'>
+<method selector='poptart'>
+<retval type='@' declared_type='KPPoptart*'/>
+</method>
+<method selector='setPoptart:'>
+<arg name='poptart' index='0' type='@' declared_type='KPPoptart*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='KPPoptart'>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='modal'>
+<retval type='@' declared_type='KPModal*'/>
+</method>
+<method selector='notification'>
+<retval type='@' declared_type='KPNotification*'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' index='0' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setModal:'>
+<arg name='modal' index='0' type='@' declared_type='KPModal*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setNotification:'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setViewId:'>
+<arg name='viewId' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='show'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='viewId'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='Kiip'>
+<method selector='alias'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='birthday'>
+<retval type='@' declared_type='NSDate*'/>
+</method>
+<method selector='capabilities'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='delegate'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='deviceIdentifier'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='email'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='gender'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='initWithAppKey:andSecret:'>
+<arg name='appKey' index='0' type='@' declared_type='NSString*'/>
+<arg name='appSecret' index='1' type='@' declared_type='NSString*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='interfaceOrientation'>
+<retval type='i' declared_type='int'/>
+</method>
+<method selector='notificationView'>
+<retval type='@' declared_type='KPNotificationView*'/>
+</method>
+<method selector='saveMoment:value:withCompletionHandler:'>
+<arg name='momentId' index='0' type='@' declared_type='NSString*'/>
+<arg name='value' index='1' type='d' declared_type='double'/>
+<arg function_pointer='true' name='handler' index='2' type='@?' declared_type='void (^)(KPPoptart *, NSError *)'>
+<arg type='@' declared_type='KPPoptart*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='saveMoment:withCompletionHandler:'>
+<arg name='momentId' index='0' type='@' declared_type='NSString*'/>
+<arg function_pointer='true' name='handler' index='1' type='@?' declared_type='void (^)(KPPoptart *, NSError *)'>
+<arg type='@' declared_type='KPPoptart*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setAlias:'>
+<arg name='alias' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBirthday:'>
+<arg name='birthday' index='0' type='@' declared_type='NSDate*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCapabilities:'>
+<arg name='capabilities' index='0' type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDelegate:'>
+<arg name='delegate' index='0' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDeviceIdentifier:'>
+<arg name='deviceIdentifier' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEmail:'>
+<arg name='email' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGender:'>
+<arg name='gender' index='0' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setInterfaceOrientation:'>
+<arg name='interfaceOrientation' index='0' type='i' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setNotificationView:'>
+<arg name='notificationView' index='0' type='@' declared_type='KPNotificationView*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSharedInstance:' class_method='true'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setShouldAutoRotate:'>
+<arg name='shouldAutoRotate' index='0' type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='sharedInstance' class_method='true'>
+<retval type='@' declared_type='Kiip*'/>
+</method>
+<method selector='shouldAutoRotate'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='didDismissModal:'>
+<arg name='modal' index='0' type='@' declared_type='KPModal*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='didDismissNotification:'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='didDismissNotificationWithClick:'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='didDismissPoptart:'>
+<arg name='poptart' index='0' type='@' declared_type='KPPoptart*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didEndSessionWithError:'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='error' index='1' type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didReceiveContent:quantity:transactionId:signature:'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='content' index='1' type='@' declared_type='NSString*'/>
+<arg name='quantity' index='2' type='i' declared_type='int'/>
+<arg name='transactionId' index='3' type='@' declared_type='NSString*'/>
+<arg name='signature' index='4' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didStartSessionWithPoptart:error:'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='poptart' index='1' type='@' declared_type='KPPoptart*'/>
+<arg name='error' index='2' type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didStartSwarm:'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='momentId' index='1' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willPresentModal:'>
+<arg name='modal' index='0' type='@' declared_type='KPModal*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willPresentNotification:'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willPresentPoptart:'>
+<arg name='poptart' index='0' type='@' declared_type='KPPoptart*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<informal_protocol name='KPModalDelegate'>
+<method selector='didDismissModal:' type='v12@0:4@8'>
+<arg name='modal' index='0' type='@' declared_type='KPModal*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willPresentModal:' type='v12@0:4@8'>
+<arg name='modal' index='0' type='@' declared_type='KPModal*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='KPNotificationDelegate'>
+<method selector='didDismissNotification:' type='v12@0:4@8'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='didDismissNotificationWithClick:' type='v12@0:4@8'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willPresentNotification:' type='v12@0:4@8'>
+<arg name='notification' index='0' type='@' declared_type='KPNotification*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='KPPoptartDelegate'>
+<method selector='didDismissPoptart:' type='v12@0:4@8'>
+<arg name='poptart' index='0' type='@' declared_type='KPPoptart*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='willPresentPoptart:' type='v12@0:4@8'>
+<arg name='poptart' index='0' type='@' declared_type='KPPoptart*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+<informal_protocol name='KiipDelegate'>
+<method selector='kiip:didEndSessionWithError:' type='v16@0:4@8@12'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='error' index='1' type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didReceiveContent:quantity:transactionId:signature:' type='v28@0:4@8@12i16@20@24'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='content' index='1' type='@' declared_type='NSString*'/>
+<arg name='quantity' index='2' type='i' declared_type='int'/>
+<arg name='transactionId' index='3' type='@' declared_type='NSString*'/>
+<arg name='signature' index='4' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didStartSessionWithPoptart:error:' type='v20@0:4@8@12@16'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='poptart' index='1' type='@' declared_type='KPPoptart*'/>
+<arg name='error' index='2' type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='kiip:didStartSwarm:' type='v16@0:4@8@12'>
+<arg name='kiip' index='0' type='@' declared_type='Kiip*'/>
+<arg name='momentId' index='1' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+</signatures>

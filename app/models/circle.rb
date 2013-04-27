@@ -30,7 +30,6 @@ class Circle
     BW::HTTP.get(url, { :headers => default_headers }) do |response|
       result_data = BW::JSON.parse(response.body.to_str)
       result_data = [] if result_data.empty?
-      print result_data
       block.call result_data.map { |attrs| Build.new attrs }
     end
   end

@@ -24,4 +24,20 @@ class Build
     end
   end
 
+  def self.check_for_rewards(builds)
+    return unless builds
+    defaults = NSUserDefaults.standardUserDefaults
+    info = defaults['user']
+    rewards = defaults['rewards'] ? defaults['rewards'] : {}
+    builds.each do |build|
+      build.check_first_passing(info) unless rewards.fetch('first_passing', nil)
+    end
+  end
+
+  def check_first_passing(info)
+    if info['email'] == self.user['email']
+      Kiip.sharedInstance.saveMoment('First passing build', withCompletionHandler: nil)
+    end
+  end
+
 end

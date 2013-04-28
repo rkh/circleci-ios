@@ -4,14 +4,6 @@ class RecentTableViewController < UITableViewController
 
   def viewDidLoad
     super
-    # Uncomment the following line to preserve selection between presentations.
-
-    # self.clearsSelectionOnViewWillAppear = false
-
-    # Uncomment the following line to display an Edit button in the navigation
-    # bar for this view controller.
-
-    # self.navigationItem.rightBarButtonItem = self.editButtonItem
     self.pullToRefreshView = SSPullToRefreshView.alloc.initWithScrollView self.tableView, delegate:self
     defaults = NSUserDefaults.standardUserDefaults
     user = defaults['user']
@@ -23,9 +15,6 @@ class RecentTableViewController < UITableViewController
 
   def viewDidUnload
     super
-
-    # Release any retained subviews of the main view.
-    # e.g. self.myOutlet = nil
   end
 
   def load_recent_builds
@@ -35,14 +24,9 @@ class RecentTableViewController < UITableViewController
     circle.token ||= user['token']
     circle.recent_builds do |builds|
       @builds = builds.dup
-      self.performSelectorInBackground('check_for_rewards:', withObject:@builds)
       self.pullToRefreshView.finishLoading
       view.reloadData
     end
-  end
-
-  def check_for_rewards(builds)
-    Build.check_for_rewards(builds)
   end
 
   def viewDidAppear(animated)
@@ -62,12 +46,10 @@ class RecentTableViewController < UITableViewController
 ## Table view data source
 
   def numberOfSectionsInTableView(tableView)
-    # Return the number of sections.
     1
   end
 
   def tableView(tableView, numberOfRowsInSection:section)
-    # Return the number of rows in the section.
     @builds.to_a.size
   end
 
@@ -79,7 +61,6 @@ class RecentTableViewController < UITableViewController
     end
 
     build = @builds[indexPath.row]
-    # [self performSelectorInBackground:@selector(getResultSetFromDB:) withObject:docids];
     cell.build_label.text = "##{build.build_num} [#{build.branch}]"
     cell.status_view.backgroundColor = build.status_color
     cell.subject_label.text = build.subject.to_s
@@ -88,40 +69,6 @@ class RecentTableViewController < UITableViewController
     cell
   end
 
-=begin
-  # Override to support conditional editing of the table view.
-  def tableView(tableView, canEditRowAtIndexPath:indexPath)
-    # Return false if you do not want the specified item to be editable.
-    true
-  end
-=end
-
-=begin
-  # Override to support editing the table view.
-  def tableView(tableView, commitEditingStyle:editingStyle forRowAtIndexPath:indexPath)
-    if editingStyle == UITableViewCellEditingStyleDelete
-      # Delete the row from the data source
-      tableView.deleteRowsAtIndexPaths(indexPath, withRowAnimation:UITableViewRowAnimationFade)
-    elsif editingStyle == UITableViewCellEditingStyleInsert
-      # Create a new instance of the appropriate class, insert it into the
-      # array, and add a new row to the table view
-    end
-  end
-=end
-
-=begin
-  # Override to support rearranging the table view.
-  def tableView(tableView, moveRowAtIndexPath:fromIndexPath, toIndexPath:toIndexPath)
-  end
-=end
-
-=begin
-  # Override to support conditional rearranging of the table view.
-  def tableView(tableView, canMoveRowAtIndexPath:indexPath)
-    # Return false if you do not want the item to be re-orderable.
-    true
-  end
-=end
 
 ## Table view delegate
 
@@ -131,6 +78,8 @@ class RecentTableViewController < UITableViewController
     # Pass the selected object to the new view controller.
     # self.navigationController.pushViewController(detailViewController, animated:true)
   end
+
+## Pull to refresh delegate
 
   def refresh
    self.pullToRefreshView.startLoading

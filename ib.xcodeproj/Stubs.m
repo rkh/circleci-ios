@@ -58,6 +58,11 @@
 @end
 
 
+@implementation ProfileViewController
+
+@end
+
+
 @implementation ProjectsTableViewController
 
 @end

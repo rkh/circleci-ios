@@ -12,14 +12,24 @@ Dotenv.load
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'CircleCI'
-  app.frameworks += ['UIKit', 'CoreTelephony', 'QuartzCore', 'SystemConfiguration']
-  app.vendor_project('vendor/KiipSDK.framework', :static,
-        :products => ['KiipSDK'],
-        :headers_dir => 'Headers')
+  app.identifier = ENV['APP_ID']
+  app.frameworks += ['UIKit']
   app.deployment_target      = '5.0'
   app.interface_orientations = [:portrait]
   app.prerendered_icon       = true
   app.pods do
     pod 'SSPullToRefresh'
+    pod 'MD5Digest'
+  end
+
+  app.development do
+    app.codesign_certificate = ENV['CODE_CERT']
+    app.provisioning_profile = ENV['DEV_PROV_PROF']
+  end
+
+  app.release do
+    app.seed_id              = ENV['SEED_ID']
+    app.codesign_certificate = ENV['RELEASE_CODE_CERT']
+    app.provisioning_profile = ENV['RELEASE_PROV_PROF']
   end
 end

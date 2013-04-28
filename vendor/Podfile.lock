@@ -1,11 +1,14 @@
 
 PODS:
+- MD5Digest (0.1.0)
 - SSPullToRefresh (1.1.2)
 
 DEPENDENCIES:
+- MD5Digest
 - SSPullToRefresh
 
 SPEC CHECKSUMS:
+  MD5Digest: 355c8733ab522cc516a4047e2d93e2b842947b18
   SSPullToRefresh: 8d8360b0ff0dc7b344656b48ddf9732c47e78806
 
 COCOAPODS: 0.16.4

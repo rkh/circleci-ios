@@ -39,8 +39,6 @@ class LoginViewController < UIViewController
   end
 
   def sign_in(sender)
-    # CircleCi.configure { |c| c.token = input_field.text }
-    # print  CircleCi::User.me
     circle = Circle.shared_instance
     circle.token = input_field.text
     circle.me do |me|

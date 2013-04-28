@@ -6,172 +6,177 @@
 <enum name='SSPullToRefreshViewStateReady' value='1'/>
 <class name='NSObject'>
 <method selector='pullToRefreshView:didUpdateContentInset:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<arg index='1' name='contentInset' declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<arg index='1' name='contentInset' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='pullToRefreshViewDidFinishLoading:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='pullToRefreshViewDidStartLoading:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='pullToRefreshViewLastUpdatedAt:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='NSDate*' type='@'/>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='@' declared_type='NSDate*'/>
 </method>
 <method selector='pullToRefreshViewShouldStartLoading:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='BOOL' type='B'/>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setLastUpdatedAt:withPullToRefreshView:'>
-<arg index='0' name='date' declared_type='NSDate*' type='@'/>
-<arg index='1' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='date' type='@' declared_type='NSDate*'/>
+<arg index='1' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setPullProgress:'>
-<arg index='0' name='pullProgress' declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='pullProgress' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setState:withPullToRefreshView:'>
-<arg index='0' name='state' declared_type='SSPullToRefreshViewState' type='i'/>
-<arg index='1' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='state' type='i' declared_type='SSPullToRefreshViewState'/>
+<arg index='1' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='NSString'>
+<method selector='MD5Digest'>
+<retval type='@' declared_type='NSString*'/>
 </method>
 </class>
 <class name='SSPullToRefreshDefaultContentView'>
 <method selector='activityIndicatorView'>
-<retval declared_type='int*' type='^i'/>
+<retval type='^i' declared_type='int*'/>
 </method>
 <method selector='lastUpdatedAtLabel'>
-<retval declared_type='int*' type='^i'/>
+<retval type='^i' declared_type='int*'/>
 </method>
 <method selector='setActivityIndicatorView:'>
-<arg index='0' name='activityIndicatorView' declared_type='int*' type='^i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='activityIndicatorView' type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setLastUpdatedAtLabel:'>
-<arg index='0' name='lastUpdatedAtLabel' declared_type='int*' type='^i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='lastUpdatedAtLabel' type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setStatusLabel:'>
-<arg index='0' name='statusLabel' declared_type='int*' type='^i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='statusLabel' type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='statusLabel'>
-<retval declared_type='int*' type='^i'/>
+<retval type='^i' declared_type='int*'/>
 </method>
 </class>
 <class name='SSPullToRefreshSimpleContentView'>
 <method selector='activityIndicatorView'>
-<retval declared_type='int*' type='^i'/>
+<retval type='^i' declared_type='int*'/>
 </method>
 <method selector='setActivityIndicatorView:'>
-<arg index='0' name='activityIndicatorView' declared_type='int*' type='^i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='activityIndicatorView' type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setStatusLabel:'>
-<arg index='0' name='statusLabel' declared_type='int*' type='^i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='statusLabel' type='^i' declared_type='int*'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='statusLabel'>
-<retval declared_type='int*' type='^i'/>
+<retval type='^i' declared_type='int*'/>
 </method>
 </class>
 <class name='SSPullToRefreshView'>
 <method selector='defaultContentInset'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='delegate'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='expandedHeight'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='finishLoading'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='initWithScrollView:delegate:'>
-<arg index='0' name='scrollView' declared_type='id' type='@'/>
-<arg index='1' name='delegate' declared_type='id' type='@'/>
-<retval declared_type='id' type='@'/>
+<arg index='0' name='scrollView' type='@' declared_type='id'/>
+<arg index='1' name='delegate' type='@' declared_type='id'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='isExpanded'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='refreshLastUpdatedAt'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='scrollView'>
-<retval declared_type='int*' type='^i'/>
+<retval type='^i' declared_type='int*'/>
 </method>
 <method selector='setDefaultContentInset:'>
-<arg index='0' name='defaultContentInset' declared_type='int' type='i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='defaultContentInset' type='i' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDelegate:'>
-<arg index='0' name='delegate' declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='delegate' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setExpandedHeight:'>
-<arg index='0' name='expandedHeight' declared_type='int' type='i'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='expandedHeight' type='i' declared_type='int'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='startLoading'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='startLoadingAndExpand:'>
-<arg index='0' name='shouldExpand' declared_type='BOOL' type='B'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='shouldExpand' type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='startLoadingAndExpand:animated:'>
-<arg index='0' name='shouldExpand' declared_type='BOOL' type='B'/>
-<arg index='1' name='animated' declared_type='BOOL' type='B'/>
-<retval declared_type='void' type='v'/>
+<arg index='0' name='shouldExpand' type='B' declared_type='BOOL'/>
+<arg index='1' name='animated' type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='state'>
-<retval declared_type='SSPullToRefreshViewState' type='i'/>
+<retval type='i' declared_type='SSPullToRefreshViewState'/>
 </method>
 </class>
 <informal_protocol name='SSPullToRefreshContentView'>
-<method type='v16@0:4@8@12' selector='setLastUpdatedAt:withPullToRefreshView:'>
-<arg index='0' name='date' declared_type='NSDate*' type='@'/>
-<arg index='1' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<method selector='setLastUpdatedAt:withPullToRefreshView:' type='v16@0:4@8@12'>
+<arg index='0' name='date' type='@' declared_type='NSDate*'/>
+<arg index='1' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
-<method type='v12@0:4@8' selector='setPullProgress:'>
-<arg index='0' name='pullProgress' declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<method selector='setPullProgress:' type='v12@0:4@8'>
+<arg index='0' name='pullProgress' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </method>
-<method type='v16@0:4i8@12' selector='setState:withPullToRefreshView:'>
-<arg index='0' name='state' declared_type='SSPullToRefreshViewState' type='i'/>
-<arg index='1' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<method selector='setState:withPullToRefreshView:' type='v16@0:4i8@12'>
+<arg index='0' name='state' type='i' declared_type='SSPullToRefreshViewState'/>
+<arg index='1' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
 </informal_protocol>
 <informal_protocol name='SSPullToRefreshViewDelegate'>
-<method type='v16@0:4@8@12' selector='pullToRefreshView:didUpdateContentInset:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<arg index='1' name='contentInset' declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<method selector='pullToRefreshView:didUpdateContentInset:' type='v16@0:4@8@12'>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<arg index='1' name='contentInset' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </method>
-<method type='v12@0:4@8' selector='pullToRefreshViewDidFinishLoading:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<method selector='pullToRefreshViewDidFinishLoading:' type='v12@0:4@8'>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
-<method type='v12@0:4@8' selector='pullToRefreshViewDidStartLoading:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='void' type='v'/>
+<method selector='pullToRefreshViewDidStartLoading:' type='v12@0:4@8'>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='v' declared_type='void'/>
 </method>
-<method type='@12@0:4@8' selector='pullToRefreshViewLastUpdatedAt:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='NSDate*' type='@'/>
+<method selector='pullToRefreshViewLastUpdatedAt:' type='@12@0:4@8'>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='@' declared_type='NSDate*'/>
 </method>
-<method type='B12@0:4@8' selector='pullToRefreshViewShouldStartLoading:'>
-<arg index='0' name='view' declared_type='SSPullToRefreshView*' type='@'/>
-<retval declared_type='BOOL' type='B'/>
+<method selector='pullToRefreshViewShouldStartLoading:' type='B12@0:4@8'>
+<arg index='0' name='view' type='@' declared_type='SSPullToRefreshView*'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 </informal_protocol>
 </signatures>

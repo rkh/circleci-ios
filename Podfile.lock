@@ -1,0 +1,14 @@
+
+PODS:
+- NSData+MD5Digest (1.0.0)
+- SSPullToRefresh (HEAD based on 1.1.2)
+
+DEPENDENCIES:
+- NSData+MD5Digest
+- SSPullToRefresh (HEAD)
+
+SPEC CHECKSUMS:
+  NSData+MD5Digest: 8275479b2a935e6caa8a92a9a814fb5abecba367
+  SSPullToRefresh: 8d8360b0ff0dc7b344656b48ddf9732c47e78806
+
+COCOAPODS: 0.16.4

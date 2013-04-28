@@ -154,7 +154,26 @@
 -(IBAction) viewDidUnload;
 -(IBAction) shouldAutorotateToInterfaceOrientation:(id) interfaceOrientation;
 -(IBAction) sign_in:(id) sender;
+-(IBAction) alert_error;
 -(IBAction) textFieldShouldReturn:(id) text_field;
+-(IBAction) textFieldFinished:(id) sender;
+
+@end
+
+
+@interface ProfileViewController: UIViewController
+
+@property IBOutlet id profile_image_view;
+@property IBOutlet id email_label;
+@property IBOutlet id token_label;
+
+
+
+-(IBAction) viewDidLoad;
+-(IBAction) viewDidUnload;
+-(IBAction) shouldAutorotateToInterfaceOrientation:(id) interfaceOrientation;
+-(IBAction) gravatar;
+-(IBAction) gravatar_host;
 
 @end
 
